@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUDLoginWinForms", "CRUDLoginWinForms\CRUDLoginWinForms.csproj", "{2F897C56-A01C-47F1-85B5-2AE5115758B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRUDWithLoginExample", "CRUDLoginWinForms\CRUDWithLoginExample.csproj", "{2F897C56-A01C-47F1-85B5-2AE5115758B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
