@@ -266,7 +266,6 @@ namespace CSharpBasics.Strings
                 //ex:after the first iteration text will be: arare mere si pere
                 position = text.IndexOf(s1, position + s2.Length);//looks for the next appearance of the string s1 in text
 
-
             }
             Console.WriteLine(text);
         }
