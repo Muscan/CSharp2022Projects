@@ -82,7 +82,7 @@ namespace CSharpBasics.Strings
         {
             /*It is considered a word consisting of small and large letters of the English alphabet.
          Create a program that allows you to delete all the occurrences of the first letter in that word.
-        Example: Pt.mamamie, it will be displayed aaie */
+         Example: For  the word mamamie, it will be displayed aaie */
 
             string newSavedWord = "";
             for (int i = 0; i < word.Length; i++)
@@ -227,7 +227,7 @@ namespace CSharpBasics.Strings
         {
             /* It is considered a text in which the space is the only separator.
          Create a program that displays the numbers that appear in the text, separated by a space.
-        Ex: Pt. "John has 2 cars and 233 meter walked today, will be displayed 7 223" */
+        Ex: For "John has 2 cars and 233 meter walked today, will be displayed 7 223" */
 
             string newWordWithNumbers = "";
             for (int i = 0; i < text.Length; i++)
