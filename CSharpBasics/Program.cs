@@ -179,6 +179,12 @@ partial class Program
         Console.WriteLine(TransformNameIntoInitials("Kün Van Berlin"));
         ExtractNumbers("Text 123 or1st");
         ReplacePartsOfAString("Jimmy are mere si pere", "re", "rare");*/
-        
+        int[]  numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9,-1 };
+        Array.Sort(numbers);
+        foreach (int number in numbers)
+        {
+            Console.WriteLine(numbers[number]);
+        }
+        Console.ReadKey();
     }
 }
