@@ -52,8 +52,6 @@ namespace CRUDWithLoginExample.Forms
 
                         LoginUserRole frm = new LoginUserRole();
                         frm.Show();
-                       // LogWeb.Log(ELogWeb_ProcessTypes.Login, LoginUserRole.userid, "Logging");
-                       //need to implement a function for getting userindex/id
                     }
                 }
                 else

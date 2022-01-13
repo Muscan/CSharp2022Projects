@@ -1,4 +1,5 @@
 ﻿using static CSharpBasics.Arrays.ArraysUsefull;
+using static CSharpBasics.BasicsCSharp.BinarySearch;
 using static CSharpBasics.Strings.Strings;
 using static CSharpBasics.BasicsCSharp.ExercicesPBInfo;
 using static CSharpBasics.BasicsCSharp.ExercicesMid;
@@ -181,10 +182,9 @@ partial class Program
         ReplacePartsOfAString("Jimmy are mere si pere", "re", "rare");*/
         int[]  numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9,-1 };
         Array.Sort(numbers);
-        foreach (int number in numbers)
+        for (int i = 0; i < numbers.Length; i++)
         {
-            Console.WriteLine(numbers[number]);
+            Console.WriteLine("Searched nr." + numbers[i] + "is at position" + BinarySearchMethod(numbers, numbers[i]));
         }
-        Console.ReadKey();
     }
 }

@@ -8,17 +8,17 @@ namespace CSharpBasics.BasicsCSharp
 {
     public class BinarySearch
     {
-        private static int BinarySearchMethod(int[] array, int item)
+        public static int BinarySearchMethod(int[] array, int searchedNumber)
         {
             int left = 0;
             int right = array.Length - 1;
             while (left <= right)
             {
                 var middle = (left + right) / 2;
-                if (array[middle] == item)
+                if (array[middle] == searchedNumber)
                     return middle;
-                if (array[middle] == item)
-                    return middle - 1;
+                if (array[middle] > searchedNumber)
+                    right = middle - 1;
                 else
                     left = middle + 1;
             }
