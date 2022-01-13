@@ -1,4 +1,5 @@
 ﻿using static CSharpBasics.Arrays.ArraysUsefull;
+using static CSharpBasics.BasicsCSharp.BinarySearch;
 using static CSharpBasics.Strings.Strings;
 using static CSharpBasics.BasicsCSharp.ExercicesPBInfo;
 using static CSharpBasics.BasicsCSharp.ExercicesMid;
@@ -179,6 +180,11 @@ partial class Program
         Console.WriteLine(TransformNameIntoInitials("Kün Van Berlin"));
         ExtractNumbers("Text 123 or1st");
         ReplacePartsOfAString("Jimmy are mere si pere", "re", "rare");*/
-        
+        int[]  numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9,-1 };
+        Array.Sort(numbers);
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            Console.WriteLine("Searched nr." + numbers[i] + "is at position" + BinarySearchMethod(numbers, numbers[i]));
+        }
     }
 }
