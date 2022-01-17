@@ -78,6 +78,7 @@ namespace CRUDWithLoginExample.Forms
             this.txtBoxUserName.Name = "txtBoxUserName";
             this.txtBoxUserName.Size = new System.Drawing.Size(125, 35);
             this.txtBoxUserName.TabIndex = 3;
+            this.txtBoxUserName.TextChanged += new System.EventHandler(this.txtBoxUserName_TextChanged);
             // 
             // txtBoxPassword
             // 
@@ -138,7 +139,7 @@ namespace CRUDWithLoginExample.Forms
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(796, 495);
+            this.ClientSize = new System.Drawing.Size(711, 500);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogin);

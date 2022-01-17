@@ -70,6 +70,11 @@ namespace CRUDWithLoginExample.Forms
             this.Close();
         }
 
+        private void txtBoxUserName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnRegister_Click(object sender, EventArgs e)
         {
             RegisterForm register = new RegisterForm();
