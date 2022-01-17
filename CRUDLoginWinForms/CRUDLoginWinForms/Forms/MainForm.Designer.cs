@@ -53,13 +53,13 @@ namespace CRUDWithLoginExample.Forms
             // 
             this.lstUsers.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.lstUsers.GridLines = true;
-            this.lstUsers.HideSelection = false;
             this.lstUsers.Location = new System.Drawing.Point(21, 119);
             this.lstUsers.Name = "lstUsers";
             this.lstUsers.Size = new System.Drawing.Size(318, 166);
             this.lstUsers.TabIndex = 3;
             this.lstUsers.UseCompatibleStateImageBehavior = false;
             this.lstUsers.View = System.Windows.Forms.View.Details;
+            this.lstUsers.SelectedIndexChanged += new System.EventHandler(this.lstUsers_SelectedIndexChanged_1);
             // 
             // btnPrintAllUsers
             // 

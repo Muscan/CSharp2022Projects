@@ -22,7 +22,12 @@ namespace CRUDWithLoginExample.Forms
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-          
+            this.lstUsers.SelectedIndexChanged += LstUsers_SelectedIndexChanged;
+        }
+
+        private void LstUsers_SelectedIndexChanged(object? sender, EventArgs e)
+        {
+           
         }
 
         private void btnRegisterUser_Click(object sender, EventArgs e)
@@ -117,6 +122,11 @@ namespace CRUDWithLoginExample.Forms
             Clear4Fields(txtBoxEditName, txtBoxEditPassword, txtBoxNewName, txtBoxNewPassword);
             checkBoxEditIsAdmin.Checked = false;
             Clear1Field(txtBoxDeleteUser);
+
+        }
+
+        private void lstUsers_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
 
         }
     }

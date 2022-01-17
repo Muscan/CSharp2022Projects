@@ -1,0 +1,3 @@
+﻿1,Paine,5
+2,Ciocolata,8
+3,Salam,9
