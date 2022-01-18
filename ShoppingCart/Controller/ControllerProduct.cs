@@ -6,6 +6,7 @@ namespace ShoppingCart.Controller
     {
         private List<Product> products;
         private List<Product> addedProducts;
+        private int total;
 
         public ControllerProduct()
         {
@@ -14,7 +15,7 @@ namespace ShoppingCart.Controller
             ReadProductTxt();
         }
 
-        public bool Add(Product product)
+       /* public bool Add(Product product)
         {
             int index = products.IndexOf(product);
             if (index == -1)
@@ -25,12 +26,12 @@ namespace ShoppingCart.Controller
                 return true;
             }
             return false;
-        }
+        }*/
         public void ReadProductTxt()
         {
             StreamReader read = new StreamReader(@"../../../Files/AvailableStock.txt");
-            String line = "";
-            line = read.ReadLine();
+            //String line;
+            String line = read.ReadLine();
 
             while (line != "" && line != null)
             {
@@ -55,39 +56,70 @@ namespace ShoppingCart.Controller
         public void DisplayProducts(ListView list)
         {
             list.Clear();
-            list.Columns.Add("ProductId", 100, HorizontalAlignment.Left);
-            list.Columns.Add("Product Name", 100, HorizontalAlignment.Left);
-            list.Columns.Add("Price", 100, HorizontalAlignment.Left);
+            list.Columns.Add("ProductId", 200, HorizontalAlignment.Left);
+            list.Columns.Add("Product Name", 200, HorizontalAlignment.Left);
+            list.Columns.Add("Price", 200, HorizontalAlignment.Left);
             for (int i = 0; i < products.Count; i++)
 
             {
-                ListViewItem listItem = new ListViewItem();
+                ListViewItem listItem = new ListViewItem();//Instanitate and call the constructor ListViewItem
                 listItem.Text = products[i].ProductId.ToString();
                // listItem.SubItems.Add(products[i].ProductId.ToString());
                 listItem.SubItems.Add(products[i].ProductName);
                 listItem.SubItems.Add(products[i].ProductPrice.ToString());
                 list.Items.Add(listItem);
-
             }
         }
-       /* public void AddedProducts(ListView list)
+        public void AddedProducts(ListView list)
         {
             list.Clear();
 
-            list.Columns.Add("ProductId", 100, HorizontalAlignment.Left);
-            list.Columns.Add("Product Name", 100, HorizontalAlignment.Left);
-            list.Columns.Add("Price", 100, HorizontalAlignment.Left);
+            list.Columns.Add("ProductId", 150, HorizontalAlignment.Left);
+            list.Columns.Add("Product Name", 200, HorizontalAlignment.Left);
+            list.Columns.Add("Price", 200, HorizontalAlignment.Left);
             for (int i = 0; i < addedProducts.Count; i++)
             {
                 ListViewItem listItem = new ListViewItem();
                 listItem.Text = addedProducts[i].ProductId.ToString();
-                // listItem.SubItems.Add(products[i].ProductId.ToString());
                 listItem.SubItems.Add(addedProducts[i].ProductName);
                 listItem.SubItems.Add(addedProducts[i].ProductPrice.ToString());
                 list.Items.Add(listItem);
             }
 
-        }*/
-        //todo ADDProducts in list
+        }
+
+        //method for adding products from list to cart
+        public void FromListToCart(int index)
+        {
+            AddProductsCalculate(products[index].ProductPrice);
+            addedProducts.Add(products[index]);//add element from the specific index to the addedProducts
+            products.RemoveAt(index);
+            
+        }
+        public void RemoveFromCart(int index)
+        {
+            RemoveProductCalculate(addedProducts[index].ProductPrice);
+            products.Add(addedProducts[index]);
+            addedProducts.RemoveAt(index);
+        }
+        
+        public int AddProductsCalculate(int addedProduct)
+        {
+            
+            total  += addedProduct;
+            return total;
+        }
+       
+        public int RemoveProductCalculate(int removedProduct)
+        {
+           total -= removedProduct;
+           return total;
+        }
+
+        public int GetTotal()
+        {
+            return total;
+        }
+        
     }
 }
