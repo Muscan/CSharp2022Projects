@@ -5,26 +5,23 @@
         public int Id { get; set; } 
         public string Name { get; set; }
         
-        public string Card { get; set; }
-
-        public double Amount { get; set; }
+        public Card Card { get; set; }
 
         public UserCard()
         {
 
         }
 
-        public UserCard(int id, string name, string card, double amount)
+        public UserCard(int id, string name, Card card)
         {
             this.Id = id;
             this.Name = name;
             this.Card = card;
-            this.Amount = amount;
         }
 
         public override string ToString()
         {
-            return Id + "," + Name +  "," + Card + "," + Amount;
+            return Id + "," + Name +  "," + Card ;
         }
     }
 }
