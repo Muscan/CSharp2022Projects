@@ -30,7 +30,7 @@ namespace ShoppingCart
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            PaymentForm paymentForm =new PaymentForm();
+            PaymentForm paymentForm =new PaymentForm(controller.GetTotal());
             paymentForm.Show();
         }
 

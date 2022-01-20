@@ -81,6 +81,7 @@
             this.btnPatWithCard.TabIndex = 4;
             this.btnPatWithCard.Text = "Pay with Card";
             this.btnPatWithCard.UseVisualStyleBackColor = true;
+            this.btnPatWithCard.Click += new System.EventHandler(this.btnPatWithCard_Click);
             // 
             // btnCancel
             // 
@@ -91,6 +92,7 @@
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel Transaction";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // PaymentForm
             // 
