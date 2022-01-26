@@ -39,7 +39,7 @@ namespace ShoppingCart.Controller
                 int id = int.Parse(parts[0]);
                 string name = parts[1];
                 int price = int.Parse(parts[2]);
-                products.Add(new Product(name, price, id));
+                products.Add(new Product(name, id, price));
                 line = read.ReadLine();
             }
             read.Close();
@@ -116,6 +116,10 @@ namespace ShoppingCart.Controller
            return total;
         }
 
+        public List<Product> GetProducts()
+        {
+            return addedProducts;
+        }
         public int GetTotal()
         {
             return total;

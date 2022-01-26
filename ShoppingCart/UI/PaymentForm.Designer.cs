@@ -32,7 +32,7 @@
             this.lblName = new System.Windows.Forms.Label();
             this.txtBoxCard = new System.Windows.Forms.TextBox();
             this.lblCard = new System.Windows.Forms.Label();
-            this.btnPatWithCard = new System.Windows.Forms.Button();
+            this.btnPayWithCard = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -72,16 +72,16 @@
             this.lblCard.TabIndex = 3;
             this.lblCard.Text = "Card";
             // 
-            // btnPatWithCard
+            // btnPayWithCard
             // 
-            this.btnPatWithCard.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnPatWithCard.Location = new System.Drawing.Point(386, 73);
-            this.btnPatWithCard.Name = "btnPatWithCard";
-            this.btnPatWithCard.Size = new System.Drawing.Size(208, 80);
-            this.btnPatWithCard.TabIndex = 4;
-            this.btnPatWithCard.Text = "Pay with Card";
-            this.btnPatWithCard.UseVisualStyleBackColor = true;
-            this.btnPatWithCard.Click += new System.EventHandler(this.btnPatWithCard_Click);
+            this.btnPayWithCard.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnPayWithCard.Location = new System.Drawing.Point(386, 73);
+            this.btnPayWithCard.Name = "btnPayWithCard";
+            this.btnPayWithCard.Size = new System.Drawing.Size(208, 80);
+            this.btnPayWithCard.TabIndex = 4;
+            this.btnPayWithCard.Text = "Pay with Card";
+            this.btnPayWithCard.UseVisualStyleBackColor = true;
+            this.btnPayWithCard.Click += new System.EventHandler(this.btnPayWithCard_Click);
             // 
             // btnCancel
             // 
@@ -100,7 +100,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnPatWithCard);
+            this.Controls.Add(this.btnPayWithCard);
             this.Controls.Add(this.lblCard);
             this.Controls.Add(this.txtBoxCard);
             this.Controls.Add(this.lblName);
@@ -118,7 +118,7 @@
         private Label lblName;
         private TextBox txtBoxCard;
         private Label lblCard;
-        private Button btnPatWithCard;
+        private Button btnPayWithCard;
         private Button btnCancel;
     }
 }

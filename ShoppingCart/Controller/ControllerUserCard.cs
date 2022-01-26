@@ -38,8 +38,12 @@ namespace ShoppingCart.Controller
 
         public void SaveToFileAmount()
         {
-            StreamWriter writeAmount = new StreamWriter(@"../../../Files/AvailableStock.txt");
-            writeAmount.WriteLine(usersCards.ToString());
+            StreamWriter writeAmount = new StreamWriter(@"../../../Files/UsersCardsFile.txt");
+            for (int i = 0; i < usersCards.Count; i++)
+            {
+              writeAmount.WriteLine(usersCards[i].ToString());
+            }
+            
             writeAmount.Close();
         }
         //addproduct calculate
@@ -59,23 +63,23 @@ namespace ShoppingCart.Controller
             return totalAmount;
         }
 
-        public UserCard ReturnUser(string name, int card)
+        public int ReturnUser(string name, int card)
         {
             for (int i = 0; i < usersCards.Count; i++)
             {
                 if (name == usersCards[i].Name
                  && card == usersCards[i].Card.Id)
                 {
-                    return usersCards[i];
+                    return i;
                 }
             }
-            return null;//not found
+            return -1;//not found
         }
 
         //sold
-        public bool ReturnBalance(UserCard userCard, double totalPayment)
+        public bool ReturnBalance(int userIndex, double totalPayment)
         {
-            if (userCard.Card.Amount >= totalPayment)
+            if (usersCards[userIndex].Card.Amount >= totalPayment)
             {
                 return true;
             }
@@ -83,9 +87,9 @@ namespace ShoppingCart.Controller
             //return (userCard.Card.Amount >= totalPayment);
         }
         //minus from account
-        public void PayWithtMoneyFromCard(UserCard userCard, double totalPayment)
+        public void PayWithtMoneyFromCard(int userIndex, double totalPayment)
         {
-            userCard.Card.Amount -= totalPayment;
+            usersCards[userIndex].Card.Amount -= totalPayment;
         }
     }
   
