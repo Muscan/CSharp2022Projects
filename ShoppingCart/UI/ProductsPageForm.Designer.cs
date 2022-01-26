@@ -1,6 +1,6 @@
 ﻿namespace ShoppingCart
 {
-    partial class Form1
+    partial class ProductsPageForm
     {
         /// <summary>
         ///  Required designer variable.

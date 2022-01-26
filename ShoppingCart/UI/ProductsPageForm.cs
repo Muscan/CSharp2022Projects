@@ -3,10 +3,10 @@ using ShoppingCart.UI;
 
 namespace ShoppingCart
 {
-    public partial class Form1 : Form
+    public partial class ProductsPageForm : Form
     {
         ControllerProduct controller;  
-        public Form1()
+        public ProductsPageForm()
         {
             InitializeComponent();
             controller = new ControllerProduct();
@@ -29,9 +29,11 @@ namespace ShoppingCart
         }
 
         private void btnPay_Click(object sender, EventArgs e)
-        {
-            PaymentForm paymentForm =new PaymentForm(controller.GetTotal());
+        {   
+            
+            PaymentForm paymentForm =new PaymentForm(controller.GetTotal(),controller.GetProducts());
             paymentForm.Show();
+            
         }
 
         private void lstViewProducts_SelectedIndexChanged(object sender, EventArgs e)
