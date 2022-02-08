@@ -17,25 +17,40 @@ namespace ShoppingCart.UI
         ControllerUserCard controllerUserCard;
         private double total;
         private List<Product> products;
-        public PaymentForm(double total, List<Product> products)
+        private Form ProductsPageForm;
+        public PaymentForm(double total, List<Product> products, Form ProductsPageForm)
         {
             InitializeComponent();
             this.products = products;   
             this.total = total;
             controllerUserCard = new ControllerUserCard();
+            this.ProductsPageForm = ProductsPageForm;
             //controllerUserCard.DisplayUsersCards();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+
             this.Close();
+            ProductsPageForm products =  new ProductsPageForm();
+            products.ShowDialog();
         }
 
         private void btnPayWithCard_Click(object sender, EventArgs e)
         {
-            //search for the User
+            int UserIndex;
+            try
+            {
+                UserIndex = controllerUserCard.ReturnUser(txtBoxName.Text, int.Parse(txtBoxCard.Text));
 
-            int UserIndex = controllerUserCard.ReturnUser(txtBoxName.Text, int.Parse(txtBoxCard.Text));
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Mandatory card id and user");
+                return;
+            }
+
+            
             if (UserIndex != -1)
             {
                 bool amountIsAvailable = controllerUserCard.ReturnBalance(UserIndex, total);
@@ -64,6 +79,13 @@ namespace ShoppingCart.UI
             {
                 MessageBox.Show("User not found");
             }
+        }
+
+        private void btnBackToCart_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            ProductsPageForm.Visible = true;
+
         }
     }
 }
