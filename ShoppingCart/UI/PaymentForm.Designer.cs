@@ -34,6 +34,7 @@
             this.lblCard = new System.Windows.Forms.Label();
             this.btnPayWithCard = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnBackToCart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtBoxName
@@ -94,11 +95,22 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // btnBackToCart
+            // 
+            this.btnBackToCart.Location = new System.Drawing.Point(386, 179);
+            this.btnBackToCart.Name = "btnBackToCart";
+            this.btnBackToCart.Size = new System.Drawing.Size(208, 89);
+            this.btnBackToCart.TabIndex = 6;
+            this.btnBackToCart.Text = "Back to cart";
+            this.btnBackToCart.UseVisualStyleBackColor = true;
+            this.btnBackToCart.Click += new System.EventHandler(this.btnBackToCart_Click);
+            // 
             // PaymentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBackToCart);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnPayWithCard);
             this.Controls.Add(this.lblCard);
@@ -120,5 +132,6 @@
         private Label lblCard;
         private Button btnPayWithCard;
         private Button btnCancel;
+        private Button btnBackToCart;
     }
 }

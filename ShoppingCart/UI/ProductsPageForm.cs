@@ -31,9 +31,9 @@ namespace ShoppingCart
         private void btnPay_Click(object sender, EventArgs e)
         {   
             
-            PaymentForm paymentForm =new PaymentForm(controller.GetTotal(),controller.GetProducts());
+            PaymentForm paymentForm =new PaymentForm(controller.GetTotal(),controller.GetProducts(), this);
             paymentForm.Show();
-            
+            this.Hide();
         }
 
         private void lstViewProducts_SelectedIndexChanged(object sender, EventArgs e)
