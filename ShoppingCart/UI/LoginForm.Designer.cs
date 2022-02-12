@@ -37,6 +37,8 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
+            this.txtBoxId = new System.Windows.Forms.TextBox();
+            this.lblId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -123,17 +125,35 @@
             // 
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblLogin.Location = new System.Drawing.Point(328, 68);
+            this.lblLogin.Location = new System.Drawing.Point(328, 9);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(75, 28);
             this.lblLogin.TabIndex = 9;
             this.lblLogin.Text = "Login";
+            // 
+            // txtBoxId
+            // 
+            this.txtBoxId.Location = new System.Drawing.Point(304, 85);
+            this.txtBoxId.Name = "txtBoxId";
+            this.txtBoxId.Size = new System.Drawing.Size(125, 27);
+            this.txtBoxId.TabIndex = 18;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(322, 56);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(24, 20);
+            this.lblId.TabIndex = 19;
+            this.lblId.Text = "ID";
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblId);
+            this.Controls.Add(this.txtBoxId);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogin);
@@ -162,5 +182,7 @@
         private Label lblPassword;
         private Label lblUserName;
         private Label lblLogin;
+        private TextBox txtBoxId;
+        private Label lblId;
     }
 }

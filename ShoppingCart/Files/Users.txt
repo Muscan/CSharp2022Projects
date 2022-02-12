@@ -1,2 +1,4 @@
-﻿1,a,a,true
-2,u,u,false
+1,a,a,True
+2,u,u,False
+3,e,e,True
+

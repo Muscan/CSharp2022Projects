@@ -38,7 +38,7 @@ namespace ShoppingCart.UI
             }
             else
             {
-                User returnedUser = controllerUser.ReturnUser(txtBoxUserName.Text, txtBoxPassword.Text, checkBoxIsAdmin.Checked);
+                User returnedUser = controllerUser.ReturnUser(int.Parse(txtBoxId.Text), txtBoxUserName.Text, txtBoxPassword.Text, checkBoxIsAdmin.Checked);
                 if (returnedUser != null)//user found
                 {
                     bool admin = controllerUser.IsUserAdmin(returnedUser);
@@ -61,7 +61,7 @@ namespace ShoppingCart.UI
 
                 
             }
-
+            txtBoxId.Text = ""; 
             txtBoxUserName.Text = "";
             txtBoxPassword.Text = "";
             checkBoxIsAdmin.Checked = false;
