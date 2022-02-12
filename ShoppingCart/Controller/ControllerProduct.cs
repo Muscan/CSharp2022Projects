@@ -15,7 +15,7 @@ namespace ShoppingCart.Controller
             ReadProductTxt();
         }
 
-       /* public bool Add(Product product)
+        public bool Add(Product product)
         {
             int index = products.IndexOf(product);
             if (index == -1)
@@ -26,7 +26,7 @@ namespace ShoppingCart.Controller
                 return true;
             }
             return false;
-        }*/
+        }
         public void ReadProductTxt()
         {
             StreamReader read = new StreamReader(@"../../../Files/AvailableStock.txt");
@@ -45,11 +45,20 @@ namespace ShoppingCart.Controller
             read.Close();
         }
 
+        public string ToStringObjectProductFile()
+        {
+            string userDataComplete = "";
+            for (int i = 0; i < products.Count; i++)
+            {
+                userDataComplete += products[i].ToString() + "\n";
+            }
+            return userDataComplete;
+        }
         //Save
         public void SaveToFileProduct()
         {
             StreamWriter write = new StreamWriter(@"../../../Files/AvailableStock.txt");
-            write.WriteLine(this.products.ToString());
+            write.WriteLine(ToStringObjectProductFile());
             write.Close();
         }
         //print products

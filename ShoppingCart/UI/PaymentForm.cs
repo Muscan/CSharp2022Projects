@@ -35,7 +35,7 @@ namespace ShoppingCart.UI
             ProductsPageForm products =  new ProductsPageForm();
             products.ShowDialog();
         }
-
+        //TODO Remove prodcut from cart after pay is OK
         private void btnPayWithCard_Click(object sender, EventArgs e)
         {
             int UserIndex;

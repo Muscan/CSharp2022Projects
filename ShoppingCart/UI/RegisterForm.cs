@@ -36,18 +36,24 @@ namespace ShoppingCart.UI
             {
                 MessageBox.Show("Password mandatory ");
             }
-            //else
-            /*{
+            else
+            {
                 
+                int idUser = int.Parse(txtBoxId.Text);
                 string registerUser = txtBoxName.Text;
                 string registerPassword = txtBoxPassword.Text;
                 bool admin = checkBoxIsAdmin.Checked;
-                User user = new User(registerUser, registerPassword, admin);
+                User user = new User(idUser,registerUser, registerPassword, admin);
                 controllerUser.AddUser(user);
                 controllerUser.SaveToFileUserTxt();
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-            }*/
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -20,7 +20,7 @@
         
         public override String ToString()
         {
-            return ProductName + "," + ProductId + "," + ProductPrice;
+            return ProductId + "," + ProductName + "," + ProductPrice;
         }
         
         

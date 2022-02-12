@@ -38,11 +38,12 @@ namespace ShoppingCart.Controller
             }
         }
 
-        public User ReturnUser(string name, string password, bool isAdmin)
+        public User ReturnUser(int id, string name, string password, bool isAdmin)
         {
             for (int i = 0; i < users.Count; i++)
             {
-                if (users[i].UserName == name
+                if (users[i].ID == id
+                &&  users[i].UserName == name
                 && users[i].Password == password
                 && users[i].IsAdmin == isAdmin)
                 {
@@ -77,7 +78,7 @@ namespace ShoppingCart.Controller
                 users.Add((userToAdd));
                 line = read.ReadLine();
             }
-            //close file
+            
             read.Close();
         }
         public void SaveToFileUserTxt()

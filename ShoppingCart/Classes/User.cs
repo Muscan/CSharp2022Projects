@@ -33,7 +33,7 @@ namespace ShoppingCart.Classes
         public bool IsAdmin { get; set; } 
         public String toSaveUser()
         {
-            return ID + ", " + UserName + "," + Password + "," + IsAdmin;
+            return ID + "," + UserName + "," + Password + "," + IsAdmin;
         }
     }
 }
