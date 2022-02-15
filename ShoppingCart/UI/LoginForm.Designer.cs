@@ -141,9 +141,10 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
+            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblId.Location = new System.Drawing.Point(322, 56);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(24, 20);
+            this.lblId.Size = new System.Drawing.Size(31, 25);
             this.lblId.TabIndex = 19;
             this.lblId.Text = "ID";
             // 
