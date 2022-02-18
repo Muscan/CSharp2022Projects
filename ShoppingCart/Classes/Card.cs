@@ -25,7 +25,7 @@ namespace ShoppingCart.Classes
 
         public override string ToString()
         {
-            return Id + ", " + Amount;
+            return Id + "," + Amount;
             
         }
     }
