@@ -134,5 +134,10 @@ namespace ShoppingCart.Controller
             return total;
         }
         
+        public void RemoveProductFromStock(int index)
+        {
+            products.RemoveAt(index);
+            SaveToFileProduct();
+        }
     }
 }

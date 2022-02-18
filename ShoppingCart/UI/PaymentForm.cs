@@ -14,7 +14,7 @@ namespace ShoppingCart.UI
 {
     public partial class PaymentForm : Form
     {
-        ControllerUserCard controllerUserCard;
+        ControllerUser controllerUserCard;
         private double total;
         private List<Product> products;
         private Form ProductsPageForm;
@@ -23,7 +23,7 @@ namespace ShoppingCart.UI
             InitializeComponent();
             this.products = products;   
             this.total = total;
-            controllerUserCard = new ControllerUserCard();
+            controllerUserCard = new ControllerUser();
             this.ProductsPageForm = ProductsPageForm;
             //controllerUserCard.DisplayUsersCards();
         }
@@ -59,7 +59,7 @@ namespace ShoppingCart.UI
                     //withrwaw money from account
                     controllerUserCard.PayWithtMoneyFromCard(UserIndex, total);
                     
-                    controllerUserCard.SaveToFileAmount();
+                    controllerUserCard.SaveToFileUserTxt();
                     //TBD-refresh balance after click
                     string ProductsInCart = "";
                     for (int i = 0; i < products.Count; i++)

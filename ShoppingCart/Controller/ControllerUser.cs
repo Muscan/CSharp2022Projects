@@ -52,7 +52,18 @@ namespace ShoppingCart.Controller
             }
             return null;
         }
-
+        public int ReturnUser(string name, int card)
+        {
+            for (int i = 0; i < users.Count; i++)
+            {
+                if (name == users[i].UserName
+                 && card == users[i].Card.Id)
+                {
+                    return i;
+                }
+            }
+            return -1;//not found
+        }
         public string ToStringObjectUserFile()
         {
             string userDataComplete = "";
@@ -73,8 +84,11 @@ namespace ShoppingCart.Controller
                 int id = int.Parse(formattedUser[0]);
                 string userName = formattedUser[1];
                 string password = formattedUser[2];
-                bool isAdmin = bool.Parse(formattedUser[3]);   
-                User userToAdd = new User(id, userName, password, isAdmin);
+                bool isAdmin = bool.Parse(formattedUser[3]);  
+                int cardId = int.Parse(formattedUser[4]);
+                double amount = double.Parse(formattedUser[5]);
+                Card card = new Card(cardId, amount);   
+                User userToAdd = new User(id, userName, password, isAdmin, card);
                 users.Add((userToAdd));
                 line = read.ReadLine();
             }
@@ -116,6 +130,26 @@ namespace ShoppingCart.Controller
 
         }
 
+        //sold
+        public bool ReturnBalance(int userIndex, double totalPayment)
+        {
+            if (users[userIndex].Card.Amount >= totalPayment)
+            {
+                return true;
+            }
+            return false;
+            //return (userCard.Card.Amount >= totalPayment);
+        }
 
+        //minus from account
+        public void PayWithtMoneyFromCard(int userIndex, double totalPayment)
+        {
+            users[userIndex].Card.Amount -= totalPayment;
+        }
+
+        public Card returnCard(int index)
+        {
+            return users[index].Card;
+        }
     }
 }

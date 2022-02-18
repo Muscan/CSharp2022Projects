@@ -43,7 +43,10 @@ namespace ShoppingCart.UI
                 string registerUser = txtBoxName.Text;
                 string registerPassword = txtBoxPassword.Text;
                 bool admin = checkBoxIsAdmin.Checked;
-                User user = new User(idUser,registerUser, registerPassword, admin);
+                int idCard = int.Parse(txtBoxIdCard.Text);
+                double amount = double.Parse(txtBoxAmount.Text);
+                Card card = new Card(idCard, amount);
+                User user = new User(idUser,registerUser, registerPassword, admin, card);
                 controllerUser.AddUser(user);
                 controllerUser.SaveToFileUserTxt();
                 this.DialogResult = DialogResult.OK;
@@ -54,6 +57,11 @@ namespace ShoppingCart.UI
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancelUser_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

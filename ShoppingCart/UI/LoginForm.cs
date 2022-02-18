@@ -42,29 +42,31 @@ namespace ShoppingCart.UI
                 if (returnedUser != null)//user found
                 {
                     bool admin = controllerUser.IsUserAdmin(returnedUser);
+                    
                     if (admin)
                     {
                         frmAdminForm frmAdminForm = new frmAdminForm();
-                        frmAdminForm.ShowDialog();
+                        frmAdminForm.Show();
                     }
                     else
                     {
                         ProductsPageForm productsPageForm = new ProductsPageForm();
                         productsPageForm.Show();
                     }
-                    
+                    this.Hide();
                 }
                 else
                 {
                     MessageBox.Show("Login does not work, user is admin or does not exist");
                 }
 
-                
+               
             }
             txtBoxId.Text = ""; 
             txtBoxUserName.Text = "";
             txtBoxPassword.Text = "";
             checkBoxIsAdmin.Checked = false;
+            
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
